@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: cpe-ia
+    env: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      python -m spacy download pt_core_news_sm
+      python seed.py
+    startCommand: gunicorn app:app

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row align-items-center g-4">
+  <div class="col-lg-7">
+    <div class="p-4 p-lg-5 app-hero">
+      <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill hero-pill mb-3">
+        <i class="bi bi-chat-dots-fill text-primary"></i>
+        <span class="small fw-semibold">Projecto MIC • Assistente académico para CPE</span>
+      </div>
+
+      <h1 class="display-6 fw-bold mb-3">
+        CPE<span class="text-primary"> • IA</span> — o teu apoio rápido em Comunicação Pessoal e Empresarial
+      </h1>
+
+      <p class="lead opacity-75 mb-4">
+        Faz perguntas, recebe respostas objectivas e revê o teu histórico.
+      </p>
+
+      <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}">
+          <i class="bi bi-box-arrow-in-right me-2"></i> Entrar
+        </a>
+        <a class="btn btn-outline-primary btn-lg" href="{{ url_for('register') }}">
+          <i class="bi bi-person-plus me-2"></i> Criar conta
+        </a>
+      </div>
+
+      <div class="mt-4 small opacity-75">
+        <div class="fw-semibold mb-1">Destaques</div>
+        <ul class="mb-0">
+          <li>Histórico por utilizador</li>
+          <li>Sugestões de perguntas (1 clique)</li>
+          <li>Modo claro/escuro</li>
+          <li>Área Admin para gerir Perguntas/Respostas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-5">
+    <div class="card shadow-sm app-card">
+      <div class="card-body p-4">
+        <h2 class="h5 fw-bold mb-3">Exemplos de perguntas</h2>
+
+        <div class="d-grid gap-2">
+          <div class="example-q"><i class="bi bi-quote"></i> Como escrever um email formal?</div>
+          <div class="example-q"><i class="bi bi-quote"></i> Quais são as barreiras da comunicação?</div>
+          <div class="example-q"><i class="bi bi-quote"></i> Elementos do processo de comunicação?</div>
+          <div class="example-q"><i class="bi bi-quote"></i> Como melhorar a comunicação em equipa?</div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="small opacity-75">
+          <div class="fw-semibold mb-1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card shadow-sm app-card">
+  <div class="card-body p-4">
+    <h1 class="h5 fw-bold mb-3">Histórico</h1>
+
+    {% if messages|length == 0 %}
+      <div class="alert alert-info mb-0">Sem histórico ainda.</div>
+    {% else %}
+      <div class="table-responsive">
+        <table class="table table-sm align-middle">
+          <thead>
+            <tr>
+              <th>Quando</th>
+              <th>Quem</th>
+              <th>Mensagem</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for m in messages %}
+              <tr>
+                <td class="text-nowrap">{{ m.created_at.strftime("%Y-%m-%d %H:%M") }}</td>
+                <td>{{ "Tu" if m.role=="user" else "Assistente" }}</td>
+                <td>{{ m.content }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
